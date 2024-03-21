@@ -5,5 +5,22 @@
     </head>
     <body>
         <h1>welcome to the membership list!!</h1>
+        <table>
+            <tr>
+                <th>Fname</th><th>Lname</th><th>e-mail</th><th>phone#</th><th>tier</th><th>address</th><th>preffered contact</th>
+            </tr>
+            {% for member in members %}
+                <tr>
+                    <td>{{ member.Fname }}</td>
+                    <td>{{ member.Lname }}</td>
+                    <td>{{ member.email }}</td>
+                    <td>{{ member.phone }}</td>
+                    <td>{{ member.membership_tier }}</td>
+                    <td>{{ member.home_address }}</td>
+                    <td>{{ member.preferred_mode_of_contact }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        
     </body>
 </html>

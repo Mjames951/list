@@ -38,7 +38,7 @@ class Member(models.Model):
     )
 
     def __str__(self):
-        return (self.Fname, self.Lname)
+        return self.Lname
     
 
 
