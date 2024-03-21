@@ -10,6 +10,9 @@ def index(request):
         form = SearchForm(request.POST)
         if form.is_valid():
             members = Member.objects.filter(Lname__contains=request.POST['search'])
+        if request.POST['search'] == ' ':
+            members = Member.objects.all().order_by('Lname')
+        form = SearchForm()
     else:
         members = Member.objects.all().order_by('Lname')
         form = SearchForm()
