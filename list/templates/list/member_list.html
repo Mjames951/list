@@ -5,6 +5,13 @@
     </head>
     <body>
         <h1>welcome to the membership list!!</h1>
+        <p><a href="{% url 'member_new' %}">ADD NEW MEMBER</a></p>
+        {% block content %}
+            <form method="GET">{% csrf_token %}
+                <input type="text">
+                <button type="submit">search</button>
+            </form>
+        {% endblock %}
         <table>
             <tr>
                 <th>Fname</th><th>Lname</th><th>e-mail</th><th>phone#</th><th>tier</th><th>address</th><th>preffered contact</th>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Creative Expression Membership List</title>
+    </head>
+    <body>
+        <h1>add a new member dude!!</h1>
+        <p><a href="{% url 'index' %}">RETURN TO MEMBER LIST</a></p>
+        {% block content %}
+            <h2>New Member</h2>
+            <form method="POST">{% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Add</button>
+            </form>
+        {% endblock %}
+    </body>
+</html>
