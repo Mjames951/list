@@ -40,6 +40,11 @@ class Member(models.Model):
     def __str__(self):
         return self.Lname
     
+class Search(models.Model):
+    search = models.CharField(max_length = 50)
+
+    def __str__(self):
+        return self.search
 
 
 # Create your models here.

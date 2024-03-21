@@ -7,8 +7,9 @@
         <h1>welcome to the membership list!!</h1>
         <p><a href="{% url 'member_new' %}">ADD NEW MEMBER</a></p>
         {% block content %}
-            <form method="GET">{% csrf_token %}
-                <input type="text">
+            <p>lookup by last name</p>
+            <form method="POST">{% csrf_token %}
+                {{ form.as_p }}
                 <button type="submit">search</button>
             </form>
         {% endblock %}
